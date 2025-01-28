@@ -13,13 +13,14 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: TestPage(),
+
         ),
       ),
     );
   }
 }
 
-class TestPage extends StatefulWidget {
+class TestPage extends StatefulWidget {     /* creando la pagina, el extends es extencion o heredar */
   const TestPage({super.key});
 
   @override
@@ -29,19 +30,26 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> {
   @override
   Widget build(BuildContext context) {
-    return Column( 
-      children: [
-        Text("estudias administracion de empresas?"),
-        TextButton(onPressed: () { }, child: Text("verdadero")),
-        TextButton(onPressed: () { }, child: Text("falso"))
-
-
-      ],
-
-    );
+    return 
+     Column(
+     mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+            children:[ 
+            Expanded(
+              flex: 5, child: Center(child: Center(child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text("el mar es azul? "),
+              )))),
+            Expanded(child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextButton(onPressed: () {}, child: Text("verdadero"),),
+            )),
+            Expanded(child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(onPressed: () {}, child: Text("falso"),),
+            )),]
+            );
   }
 }
-
-
 
 
